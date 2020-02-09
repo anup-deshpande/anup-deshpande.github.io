@@ -1,0 +1,25 @@
+/* About Me Section Styles */
+
+.about-me{
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-me img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.about-me h3{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.about-me h4{
+    margin-top: 10px;
+    text-align: center;
+}
