@@ -1,7 +1,7 @@
 /* About Me Section Styles */
 
 .about-me{
-    margin-top: 50px;
+    margin-top: 30px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -19,7 +19,22 @@
     text-align: center;
 }
 
-.about-me h4{
-    margin-top: 10px;
+.about-me h5{
     text-align: center;
+}
+
+.about-me p{
+    text-align: center;
+    
+}
+
+/* Experience section styles */
+
+.experience-box{
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.company-time p{
+    float: right;
 }
