@@ -1,5 +1,5 @@
 /* ===================================================================
- * Ethos 1.0.0 - Main JS
+ * Epitome - Main JS
  *
  * ------------------------------------------------------------------- */
 
@@ -7,29 +7,28 @@
 
     "use strict";
     
-    const cfg = {
-                scrollDuration : 800, // smoothscroll duration
-                mailChimpURL   : ''   // mailchimp url
-                };
-    const $WIN = $(window);
+    var cfg = {
+        scrollDuration : 800, // smoothscroll duration
+        mailChimpURL   : ''   // mailchimp url
+    },
 
+    $WIN = $(window);
 
     // Add the User Agent to the <html>
     // will be used for IE10/IE11 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; rv:11.0))
-    const doc = document.documentElement;
+    var doc = document.documentElement;
     doc.setAttribute('data-useragent', navigator.userAgent);
 
 
-
-   /* preloader
+   /* Preloader
     * -------------------------------------------------- */
-    const ssPreloader = function() {
-
+    var ssPreloader = function() {
+        
         $("html").addClass('ss-preload');
 
         $WIN.on('load', function() {
 
-            // force page scroll position to top at page refresh
+            //force page scroll position to top at page refresh
             $('html, body').animate({ scrollTop: 0 }, 'normal');
 
             // will first fade out the loading animation 
@@ -41,137 +40,123 @@
             // for hero content animations 
             $("html").removeClass('ss-preload');
             $("html").addClass('ss-loaded');
+        
+        });
+    };
+
+
+   /* Menu on Scrolldown
+    * ------------------------------------------------------ */
+    var ssMenuOnScrolldown = function() {
+        
+        var hdr = $('.s-header'),
+            hdrTop = $('.s-header').offset().top;
+
+        $WIN.on('scroll', function() {
+
+            if ($WIN.scrollTop() > hdrTop) {
+                hdr.addClass('sticky');
+            }
+            else {
+                hdr.removeClass('sticky');
+            }
 
         });
     };
 
 
-
-   /* pretty print
-    * -------------------------------------------------- */
-    const ssPrettyPrint = function() {
-        $('pre').addClass('prettyprint');
-        $( document ).ready(function() {
-            prettyPrint();
-        });
-    };
-
-
-
-   /* move header
-    * -------------------------------------------------- */
-    const ssMoveHeader = function () {
-
-        const $hero = $('.s-hero'),
-              $hdr = $('.s-header'),
-              triggerHeight = $hero.outerHeight() - 170;
-
-
-        $WIN.on('scroll', function () {
-
-            let loc = $WIN.scrollTop();
-
-            if (loc > triggerHeight) {
-                $hdr.addClass('sticky');
-            } else {
-                $hdr.removeClass('sticky');
-            }
-
-            if (loc > triggerHeight + 20) {
-                $hdr.addClass('offset');
-            } else {
-                $hdr.removeClass('offset');
-            }
-
-            if (loc > triggerHeight + 150) {
-                $hdr.addClass('scrolling');
-            } else {
-                $hdr.removeClass('scrolling');
-            }
-
-        });
-
-    };
-
-
-
-   /* mobile menu
+   /* Mobile Menu
     * ---------------------------------------------------- */ 
-    const ssMobileMenu = function() {
+    var ssMobileMenu = function() {
 
-        const $toggleButton = $('.header-menu-toggle');
-        const $headerContent = $('.header-content');
-        const $siteBody = $("body");
+        var toggleButton = $('.header-menu-toggle'),
+            nav = $('.header-nav-wrap');
 
-        $toggleButton.on('click', function(event){
+        toggleButton.on('click', function(event){
             event.preventDefault();
-            $toggleButton.toggleClass('is-clicked');
-            $siteBody.toggleClass('menu-is-open');
+
+            toggleButton.toggleClass('is-clicked');
+            nav.slideToggle();
         });
 
-        $headerContent.find('.header-nav a, .btn').on("click", function() {
-
-            // at 900px and below
-            if (window.matchMedia('(max-width: 900px)').matches) {
-                $toggleButton.toggleClass('is-clicked');
-                $siteBody.toggleClass('menu-is-open');
-            }
-        });
+        if (toggleButton.is(':visible')) nav.addClass('mobile');
 
         $WIN.on('resize', function() {
+            if (toggleButton.is(':visible')) nav.addClass('mobile');
+            else nav.removeClass('mobile');
+        });
 
-            // above 900px
-            if (window.matchMedia('(min-width: 901px)').matches) {
-                if ($siteBody.hasClass("menu-is-open")) $siteBody.removeClass("menu-is-open");
-                if ($toggleButton.hasClass("is-clicked")) $toggleButton.removeClass("is-clicked");
+        nav.find('a').on("click", function() {
+
+            if (nav.hasClass('mobile')) {
+                toggleButton.toggleClass('is-clicked');
+                nav.slideToggle(); 
             }
         });
 
     };
 
-
-   /* accordion
+   /* Highlight the current section in the navigation bar
     * ------------------------------------------------------ */
-    const ssAccordion = function() {
+    var ssWaypoints = function() {
 
-        const $allItems = $('.services-list__item');
-        const $allPanels = $allItems.children('.services-list__item-body');
+        var sections = $(".target-section"),
+            navigation_links = $(".header-main-nav li a");
 
-        $allPanels.slice(1).hide();
+        sections.waypoint( {
 
-        $allItems.on('click', '.services-list__item-header', function() {
+            handler: function(direction) {
 
-            const $this = $(this),
-                  $curItem = $this.parent(),
-                  $curPanel =  $this.next();
+                var active_section;
 
-            if(!$curItem.hasClass('is-active')){
-                $allPanels.slideUp();
-                $curPanel.slideDown();
-                $allItems.removeClass('is-active');
-                $curItem.addClass('is-active');
-            }
-            
-            return false;
+                active_section = $('section#' + this.element.id);
+
+                if (direction === "up") active_section = active_section.prevAll(".target-section").first();
+
+                var active_link = $('.header-main-nav li a[href="#' + active_section.attr("id") + '"]');
+
+                navigation_links.parent().removeClass("current");
+                active_link.parent().addClass("current");
+
+            },
+
+            offset: '25%'
+
         });
+        
     };
 
+
+   /* Masonry
+    * ---------------------------------------------------- */ 
+    var ssMasonryFolio = function () {
+        
+        var containerBricks = $('.masonry');
+
+        containerBricks.imagesLoaded(function () {
+            containerBricks.masonry({
+                itemSelector: '.masonry__brick',
+                resize: true
+            });
+        });
+
+    };
 
 
    /* photoswipe
     * ----------------------------------------------------- */
-    const ssPhotoswipe = function() {
-        const items = [],
+    var ssPhotoswipe = function() {
+        var items = [],
             $pswp = $('.pswp')[0],
-            $folioItems = $('.folio-item');
+            $folioItems = $('.item-folio');
 
         // get items
         $folioItems.each( function(i) {
 
-            let $folio = $(this),
-                $thumbLink =  $folio.find('.folio-item__thumb-link'),
-                $title = $folio.find('.folio-item__title'),
-                $caption = $folio.find('.folio-item__caption'),
+            var $folio = $(this),
+                $thumbLink =  $folio.find('.thumb-link'),
+                $title = $folio.find('.item-folio__title'),
+                $caption = $folio.find('.item-folio__caption'),
                 $titleText = '<h4>' + $.trim($title.html()) + '</h4>',
                 $captionText = $.trim($caption.html()),
                 $href = $thumbLink.attr('href'),
@@ -179,7 +164,7 @@
                 $width  = $size[0],
                 $height = $size[1];
         
-            let item = {
+            var item = {
                 src  : $href,
                 w    : $width,
                 h    : $height
@@ -195,15 +180,15 @@
         // bind click event
         $folioItems.each(function(i) {
 
-            $(this).find('.folio-item__thumb-link').on('click', function(e) {
+            $(this).find('.thumb-link').on('click', function(e) {
                 e.preventDefault();
-                let options = {
+                var options = {
                     index: i,
                     showHideOpacity: true
                 }
 
                 // initialize PhotoSwipe
-                let lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
                 lightBox.init();
             });
 
@@ -211,47 +196,70 @@
     };
 
 
-
    /* slick slider
     * ------------------------------------------------------ */
-    const ssSlickSlider = function() {
-            
-        $('.testimonial-slider').slick({
+    var ssSlickSlider = function() {
+        
+        $('.testimonials__slider').slick({
             arrows: false,
             dots: true,
             infinite: true,
-            slidesToShow: 3,
+            slidesToShow: 1,
             slidesToScroll: 1,
             pauseOnFocus: false,
             autoplaySpeed: 1500,
-            responsive: [
-                {
-                    breakpoint: 1080,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
+            fade: true,
+            cssEase: 'linear'
         });
+    };
+
+
+   /* Smooth Scrolling
+    * ------------------------------------------------------ */
+    var ssSmoothScroll = function() {
+        
+        $('.smoothscroll').on('click', function (e) {
+            var target = this.hash,
+            $target    = $(target);
+            
+                e.preventDefault();
+                e.stopPropagation();
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, cfg.scrollDuration, 'swing').promise().done(function () {
+
+                // check if menu is open
+                if ($('body').hasClass('menu-is-open')) {
+                    $('.header-menu-toggle').trigger('click');
+                }
+
+                window.location.hash = target;
+            });
+        });
+
+    };
+
+
+   /* Alert Boxes
+    * ------------------------------------------------------ */
+    var ssAlertBoxes = function() {
+
+        $('.alert-box').on('click', '.alert-box__close', function() {
+            $(this).parent().fadeOut(500);
+        }); 
+
     };
 
 
    /* Animate On Scroll
     * ------------------------------------------------------ */
-    const ssAOS = function() {
+    var ssAOS = function() {
         
         AOS.init( {
-            offset: 100,
+            offset: 200,
             duration: 600,
-            easing: 'ease-in-out',
+            easing: 'ease-in-sine',
             delay: 300,
             once: true,
             disable: 'mobile'
@@ -260,75 +268,20 @@
     };
 
 
-
-   /* alert boxes
+   /* Initialize
     * ------------------------------------------------------ */
-    const ssAlertBoxes = function() {
-
-        $('.alert-box').on('click', '.alert-box__close', function() {
-            $(this).parent().fadeOut(500);
-        }); 
-
-    };
-
-    
-   /* smooth scrolling
-    * ------------------------------------------------------ */
-    const ssSmoothScroll = function() {
-        
-        $('.smoothscroll').on('click', function (e) {
-            const target = this.hash;
-            const $target = $(target);
-            
-            e.preventDefault();
-            e.stopPropagation();
-
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing').promise().done(function () {
-                window.location.hash = target;
-            });
-        });
-
-    };
-
-
-   /* back to top
-    * ------------------------------------------------------ */
-    const ssBackToTop = function() {
-        
-        const pxShow = 800;
-        const $goTopButton = $(".ss-go-top")
-
-        // Show or hide the button
-        if ($(window).scrollTop() >= pxShow) $goTopButton.addClass('link-is-visible');
-
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() >= pxShow) {
-                if(!$goTopButton.hasClass('link-is-visible')) $goTopButton.addClass('link-is-visible')
-            } else {
-                $goTopButton.removeClass('link-is-visible')
-            }
-        });
-    };
-
-
-
-   /* initialize
-    * ------------------------------------------------------ */
-    (function ssInit() {
+    (function clInit() {
 
         ssPreloader();
-        ssPrettyPrint();
-        ssMoveHeader();
+        ssMenuOnScrolldown();
         ssMobileMenu();
-        ssAccordion();
+        ssWaypoints();
+        ssMasonryFolio();
         ssPhotoswipe();
         ssSlickSlider();
-        ssAOS();
-        ssAlertBoxes();
         ssSmoothScroll();
-        ssBackToTop();
+        ssAlertBoxes();
+        ssAOS();
 
     })();
 
