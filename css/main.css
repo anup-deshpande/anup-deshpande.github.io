@@ -85,8 +85,7 @@ body {
 a {
   color: #000000;
   transition: all 0.3s ease-in-out;
-  font-family: "Poppins", serif;
-  font-weight: 550;
+  font-weight: 510;
 }
 
 a:hover,
@@ -96,6 +95,10 @@ a:active {
   border-bottom: 1px solid black;
 }
 
+a:hover,
+a:active {
+  outline: 0;
+}
 
 
 
@@ -182,8 +185,8 @@ p img {
 }
 
 p.lead {
-  font-family: "Poppins", serif;
-  font-size: 2.1rem;
+  font-family: "Helvetica", serif;
+  font-size: 2.0rem;
   line-height: 1.833;
   margin-bottom: 3.6rem;
   color: #000000;
@@ -1529,7 +1532,7 @@ input::-moz-focus-inner {
 }
 
 .header-social {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0;
   position: absolute;
   top: 0;
@@ -1537,7 +1540,7 @@ input::-moz-focus-inner {
 }
 
 .header-social li {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .header-social li:last-child {
@@ -2690,8 +2693,8 @@ input::-moz-focus-inner {
 
 .item-folio__title,
 .item-folio__cat {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.7rem;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.6rem;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 2rem;
@@ -2708,13 +2711,13 @@ input::-moz-focus-inner {
 }
 
 .item-folio__cat::before {
-  content: "-";
   margin: 0 .4rem;
 }
 
 .item-folio__caption {
   display: none;
 }
+
 
 /* ------------------------------------------------------------------- 
  * responsive:
