@@ -83,20 +83,19 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-  color: #cf1767;
+  color: #000000;
   transition: all 0.3s ease-in-out;
+  font-family: "Poppins", serif;
+  font-weight: 550;
 }
 
 a:hover,
 a:focus,
 a:active {
   color: #000000;
+  border-bottom: 1px solid black;
 }
 
-a:hover,
-a:active {
-  outline: 0;
-}
 
 
 
@@ -183,9 +182,8 @@ p img {
 }
 
 p.lead {
-  font-family: "Martel", serif;
-  font-weight: 300;
-  font-size: 2.4rem;
+  font-family: "Poppins", serif;
+  font-size: 2.1rem;
   line-height: 1.833;
   margin-bottom: 3.6rem;
   color: #000000;
@@ -693,8 +691,8 @@ button.btn--primary:focus,
 input[type="submit"].btn--primary:focus,
 input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
-  background: #cf1767;
-  border-color: #cf1767;
+  background: #c24d2c;
+  border-color: #c24d2c;
 }
 
 /* button modifiers

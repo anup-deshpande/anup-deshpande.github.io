@@ -20,7 +20,7 @@
  * ------------------------------------------------------------------- */
 [data-aos][data-aos][data-aos-duration='50'],
 body[data-aos-duration='50'] [data-aos] {
-  transition-duration: 50ms;
+  transition-duration: 40ms;
 }
 
 [data-aos][data-aos][data-aos-delay='50'],
