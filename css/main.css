@@ -2595,6 +2595,7 @@ input::-moz-focus-inner {
   transition: all 0.5s ease-in-out;
 }
 
+
 /* item-folio thumb
  * -------------------------------------- */
 .item-folio__thumb {
@@ -2653,11 +2654,11 @@ input::-moz-focus-inner {
   display: block;
   width: 6.4rem;
   height: 6.4rem;
-  background-color: #cf1767;
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 30%;
-  background-image: url(../images/icons/icon-link.svg);
+  background-size: 50%;
+  background-image: url(../images/icons/github.svg);
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
   z-index: 2;
@@ -2716,7 +2717,9 @@ input::-moz-focus-inner {
 
 .item-folio__caption {
   display: none;
+  font-family: "Helvetica", sans-serif;
 }
+
 
 
 /* ------------------------------------------------------------------- 
@@ -3099,233 +3102,104 @@ input::-moz-focus-inner {
 
 }
 
-
-
-/* ===================================================================
- * # contact
- *
- * ------------------------------------------------------------------- */
-.s-contact {
-  padding-top: 18.4rem;
-  padding-bottom: 6.4rem;
-  background-color: #050505;
-}
-
-.contact-main a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: inline-block;
-}
-
-.contact-main a:hover,
-.contact-main a:focus,
-.contact-main a:active {
-  color: #cf1767;
-  border-bottom: 1px solid white;
-}
-
-.contact-email {
-  font-family: "Poppins", sans-serif;
-  font-size: 5rem;
-  font-weight: 400;
-  line-height: 1;
-  margin: 5.6rem 0 8rem;
-}
-
-.contact-infos {
-  margin-top: 12.8rem;
-  font-family: "Poppins", serif;
-  font-weight: 400;
-  font-size: 4.2rem;
-  line-height: 1.333;
-}
-
-.contact-infos .column {
-  margin-bottom: 1.6rem;
-}
-
-.contact-infos h4 {
-  font-family: "Martel", sans-serif;
-  font-weight: 400;
-  font-size: 2.4rem;
-  line-height: 1.333;
-  margin-top: 0;
-  margin-bottom: .8rem;
-  color: rgba(255, 255, 255, 0.35);
-}
-
-.contact-infos a {
-  color: #ffffff;
-}
-
-.contact-infos a:hover,
-.contact-infos a:focus,
-.contact-infos a:active {
-  color: #cf1767;
-}
-
-.contact-social ul {
-  list-style: none;
-  margin-left: 0;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-}
-
-.contact-social ul li {
-  padding-left: 0;
-}
-
-.contact-social ul li::before {
-  content: "/";
-  color: #ffffff;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-.contact-social ul li:first-child::before {
-  display: none;
-}
-
-/* ------------------------------------------------------------------- 
-* responsive:
-* contact
-* ------------------------------------------------------------------- */
-@media screen and (max-width:1300px) {
-  .contact-email {
-    font-size: 10rem;
-  }
-
-  .contact-infos {
-    font-size: 4rem;
-  }
-
-  .contact-infos h4 {
-    font-size: 2rem;
-  }
-
-}
-
-@media screen and (max-width:1200px) {
-  .contact-email {
-    font-size: 9rem;
-  }
-
-  .contact-infos {
-    margin-top: 9.6rem;
-  }
-
-}
-
-@media screen and (max-width:1024px) {
-  .contact-email {
-    font-size: 6.5rem;
-  }
-
-  .contact-infos {
-    font-size: 3.8rem;
-  }
-
-  .contact-infos h4 {
-    font-size: 1.8rem;
-  }
-
-}
-
-@media screen and (max-width:800px) {
-  .s-contact {
-    padding-top: 16rem;
-  }
-
-  .contact-email {
-    font-size: 4rem;
-  }
-
-  .contact-infos {
-    font-size: 3.6rem;
-  }
-
-}
-
-@media screen and (max-width:600px) {
-  .contact-social ul li {
-    margin-right: 1.2rem;
-  }
-
-  .contact-social ul li::before {
-    display: none;
-  }
-
-  .contact-email {
-    font-size: 2.2rem;
-  }
-
-}
-
-@media screen and (max-width:400px) {
-  .contact-infos {
-    font-size: 3rem;
-  }
-
-  .contact-email{
-    font-size: 2.0rem;
-  }
-
-}
-
-
-@media screen and (max-width:300px) {
-  .contact-infos {
-    font-size: 3rem;
-  }
-
-  .contact-email{
-    font-size: 2.0rem;
-  }
-
-}
-
-
 /* ===================================================================
  * # footer
  *
  * ------------------------------------------------------------------- */
-footer {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-size: 1.6rem;
-  line-height: 2;
-  padding-top: 0;
-  padding-bottom: 6.4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.3);
+ .s-footer {
+  padding-top: 24rem;
+  padding-bottom: 8rem;
+  background-color: #0b0a15;
   position: relative;
 }
 
-footer a,
-footer a:visited {
+.s-footer .right-vert-line {
+  background-color: #f9861a;
+}
+
+.s-footer__bottom {
+  font-family: "Gothic A1", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8rem;
+}
+
+.s-footer .footer-email-us .btn:hover,
+.s-footer .footer-email-us .btn:focus {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+.s-footer .footer-contacts {
+  margin-top: 7.2rem;
+  margin-left: 8.33333%;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## contact block
+ * ------------------------------------------------------------------- */
+.footer-contact-block {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.footer-contact-block a {
   color: #ffffff;
+}
+
+.footer-contact-block a:hover,
+.footer-contact-block a:focus {
+  color: #f9861a;
+}
+
+.footer-contact-block__content,
+.footer-contact-block__list li {
+  padding: .8rem 0;
+}
+
+.footer-contact-block__list {
+  list-style: none;
+  margin-top: .4rem;
+  margin-left: 0;
+}
+
+.footer-contact-block__list li {
+  padding-left: 0;
+}
+
+.footer-contact-block__header {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
 }
 
 /* ------------------------------------------------------------------- 
  * ## copyright
  * ------------------------------------------------------------------- */
 .ss-copyright {
-  margin-top: 2rem;
-  padding-right: 80px;
+  z-index: 2;
+  position: relative;
+}
+
+.ss-copyright a {
+  color: #ffffff;
+}
+
+.ss-copyright a:hover,
+.ss-copyright a:focus {
+  color: #f9861a;
 }
 
 .ss-copyright span {
-  font-size: 14px;
+  font-size: 1.5rem;
   display: inline-block;
 }
 
 .ss-copyright span::after {
   content: "|";
   display: inline-block;
-  padding: 0 1rem 0 1.2rem;
+  padding: 0 .8rem 0 1rem;
   color: rgba(255, 255, 255, 0.1);
 }
 
@@ -3334,72 +3208,58 @@ footer a:visited {
 }
 
 /* ------------------------------------------------------------------- 
- * ## go to top
+ * ## go top
  * ------------------------------------------------------------------- */
 .ss-go-top {
-  position: absolute;
-  top: -1px;
-  right: 6rem;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, 200%, 0);
+  transform: translate3d(0, 200%, 0);
+  -webkit-transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  position: fixed;
+  bottom: 8.4rem;
+  right: 8rem;
 }
 
 .ss-go-top a {
-  display: block;
-  background: rgba(255, 255, 255, 0.05);
   text-decoration: none;
-  margin: 0;
-  padding: 0;
   border: 0 none;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
+  display: block;
+  height: 6.4rem;
+  width: 6.4rem;
+  border-radius: 50%;
+  background-color: #000000;
+  -webkit-transition: all .3s;
   transition: all .3s;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url(../images/icons/icon-arrow-up.svg);
-  background-size: 10px 16px;
   position: relative;
 }
 
 .ss-go-top a:hover,
 .ss-go-top a:focus {
-  background-color: #cf1767;
-  color: #ffffff;
+  background-color: #f9861a;
 }
 
-.ss-go-top::before {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.05);
+.ss-go-top svg {
+  height: 1.2rem;
+  width: 1.2rem;
   position: absolute;
-  top: -115px;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
   left: 50%;
+  top: 50%;
 }
 
-.ss-go-top::after {
-  content: "back to top";
-  display: block;
-  float: left;
-  width: 120px;
-  font-size: 1.2rem;
-  line-height: 30px;
-  text-transform: uppercase;
-  letter-spacing: .2rem;
-  color: rgba(255, 255, 255, 0.15);
-  transition: all 0.5s;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -webkit-transform-origin: left bottom;
-  -ms-transform-origin: left bottom;
-  transform-origin: left bottom;
-  position: absolute;
-  left: calc(30px + 15px);
-  top: -165px;
+.ss-go-top svg path {
+  fill: #ffffff;
+}
+
+.ss-go-top.link-is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3408,28 +3268,53 @@ footer a:visited {
  * ------------------------------------------------------------------- */
 @media screen and (max-width:1200px) {
   .ss-go-top {
-    right: 3rem;
+    right: 6rem;
+  }
+
+  .ss-go-top a {
+    height: 6rem;
+    width: 6rem;
   }
 
 }
 
 @media screen and (max-width:900px) {
-  .ss-go-top {
-    right: 0;
+  .s-footer .footer-contacts {
+    margin-left: 0;
   }
 
-  .ss-go-top::before,
-  .ss-go-top::after {
-    display: none;
+  .s-footer__main .column {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+}
+
+@media screen and (max-width:800px) {
+  .s-footer {
+    padding-top: 20rem;
+  }
+
+  .ss-copyright {
+    padding-right: 10rem;
+  }
+
+  .ss-go-top {
+    right: 3.6rem;
+  }
+
+  .ss-go-top a {
+    height: 5.2rem;
+    width: 5.2rem;
   }
 
 }
 
 @media screen and (max-width:600px) {
   .ss-copyright {
-    margin-top: 9rem;
-    padding: 0;
-    text-align: center;
+    padding-right: 8rem;
   }
 
   .ss-copyright span {
@@ -3441,18 +3326,12 @@ footer a:visited {
   }
 
   .ss-go-top {
-    right: 50%;
-    margin-right: -30px;
+    right: 2.4rem;
+    bottom: 4rem;
   }
 
 }
 
-@media screen and (max-width:400px) {
-  .ss-copyright span {
-    font-size: 13px;
-  }
-
-}
 
 
 
