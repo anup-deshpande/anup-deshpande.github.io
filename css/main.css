@@ -682,6 +682,8 @@ input[type="button"].btn--primary {
   background: #000000;
   border-color: #000000;
   color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn.btn--primary:hover,
@@ -1782,16 +1784,16 @@ input::-moz-focus-inner {
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.333;
-  color: #cf1767;
-  margin-top: 10;
+  color: #ffffffd8;
+  margin-top: 0;
 }
 
 .intro-text h2 {
-  font-family: "Martel", sans-serif;
-  font-size: 7.8rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
   font-weight: 450;
   line-height: 1.179;
-  color: #ffffff;
+  color: #ffffffea;
   margin-top: 0;
 }
 
@@ -2001,6 +2003,7 @@ input::-moz-focus-inner {
  
 .about-me__buttons {
   margin-top: 4.8rem;
+  align-items: center;
 }
 
 .about-me__buttons .column:first-child {
@@ -3139,8 +3142,8 @@ input::-moz-focus-inner {
  * ## contact block
  * ------------------------------------------------------------------- */
 .footer-contact-block {
-  font-family: "Gothic A1", sans-serif;
-  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
   font-size: 2.8rem;
   line-height: 1.2;
 }
