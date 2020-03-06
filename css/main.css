@@ -195,10 +195,12 @@ p.lead {
 
 @media screen and (max-width:1200px) {
   p.lead {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+    text-align: justify;
   }
 
 }
+
 
 em,
 i,
@@ -3198,6 +3200,8 @@ input::-moz-focus-inner {
   font-family: "Poppins", sans-serif;
 }
 
+
+
 /* ------------------------------------------------------------------- 
  * ## copyright
  * ------------------------------------------------------------------- */
@@ -3332,6 +3336,14 @@ input::-moz-focus-inner {
   .ss-go-top a {
     height: 5.2rem;
     width: 5.2rem;
+  }
+
+  .footer-contact-block__content{
+    font-size: 19px;
+  }
+
+  .footer-contact-block__list li{
+    font-size: 15px;
   }
 
 }
