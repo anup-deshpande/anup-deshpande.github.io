@@ -1855,7 +1855,7 @@ input::-moz-focus-inner {
   }
 
   .intro-text h2 {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 
 }
@@ -1873,7 +1873,8 @@ input::-moz-focus-inner {
 
 @media screen and (max-width:900px) {
   .intro-text h2 {
-    font-size: 6rem;
+    font-size: 4.7rem;
+    margin-top: 20px;
   }
 
   .intro-text br {
@@ -1884,7 +1885,7 @@ input::-moz-focus-inner {
 
 @media screen and (max-width:800px) {
   .intro-content {
-    width: 88%;
+    width: auto;
     padding-top: 8rem;
   }
 
@@ -1902,28 +1903,39 @@ input::-moz-focus-inner {
     top: 20%;
     opacity: .1;
   }
+  .intro-pic {
+    left: 30%;
+    margin-top: 30px;
+  }
 
   .intro-text h3 {
     font-size: 1.8rem;
   }
 
   .intro-text h2 {
-    font-size: 5.6rem;
+    font-size: 4.5rem;
+    margin-top: 20px;
   }
 
 }
 
 @media screen and (max-width:700px) {
   .intro-text h2 {
-    font-size: 5rem;
+    font-size: 3.8rem;
+    margin-top: 20px;
   }
 
+  .intro-content{
+    width: auto;
+  }
   .intro-pic {
     left: 30%;
+    margin-top: 30px;
   }
 
   .intro-grid {
     left: 15%;
+    margin-top: 30px;
   }
 
 }
@@ -1986,7 +1998,8 @@ input::-moz-focus-inner {
 
 @media screen and (max-width:350px) {
   .intro-text h2 {
-    font-size: 4.0rem;
+    margin-top: 70px;
+    font-size: 3rem;
   }
 
 }
