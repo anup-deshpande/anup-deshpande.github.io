@@ -1453,35 +1453,6 @@ input::-moz-focus-inner {
 }
 
 /* -------------------------------------------------------------------
- * ## header logo
- * ------------------------------------------------------------------- */
-.header-logo {
-  display: inline-block;
-  margin: 6px 0 0 0;
-  padding: 0;
-  -webkit-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
-  position: absolute;
-  top: 50%;
-  left: 40px;
-}
-
-.header-logo a {
-  display: block;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: none;
-  transition: all .3s;
-}
-
-.header-logo img {
-  width: 132px;
-  height: 36px;
-  margin: 0;
-}
-
-/* -------------------------------------------------------------------
  * ## main navigation
  * ------------------------------------------------------------------- */
 .header-nav-wrap {
@@ -1669,7 +1640,7 @@ input::-moz-focus-inner {
 
 @media screen and (max-width:800px) {
   .s-header {
-    background-color: #050505;
+    /* background-color: #050505; */
     position: fixed;
     top: 0;
   }
@@ -1855,7 +1826,7 @@ input::-moz-focus-inner {
   }
 
   .intro-text h2 {
-    font-size: 5rem;
+    font-size: 5.6rem;
   }
 
 }
@@ -1866,7 +1837,7 @@ input::-moz-focus-inner {
   }
 
   .intro-text h2 {
-    font-size: 6.2rem;
+    font-size: 5.6rem;
   }
 
 }
