@@ -2058,7 +2058,7 @@ input::-moz-focus-inner {
 
 #resume .timeline-content h4 {
 	position: relative;
-  padding-bottom: 1.8rem;
+  padding-bottom: 2rem;
   font-family: "Poppins", sans-serif;
 }
 #resume .timeline-content h4::after {
