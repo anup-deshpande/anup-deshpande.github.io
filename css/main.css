@@ -1941,8 +1941,8 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 .s-about {
-  padding-top: 19.2rem;
-  padding-bottom: 16.8rem;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
   background-color: #FBFBFB;
 }
 
@@ -1979,8 +1979,8 @@ input::-moz-focus-inner {
  * ------------------------------------------------------------------- 
  */
  #resume {
-	padding-top: 12rem;
-	padding-bottom: 12rem;
+	padding-top: 10rem;
+	padding-bottom: 6rem;
 }
 
 #resume .resume-header {
@@ -1991,7 +1991,7 @@ input::-moz-focus-inner {
 }
 
 #resume .resume-timeline {
-	max-width: 980px;
+	max-width: 1180px;
 }
 #resume .timeline-wrap {
 	position: relative;
@@ -2040,6 +2040,7 @@ input::-moz-focus-inner {
 #resume .timeline-header h3 {
   margin-bottom: 0;
   font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
 }
 #resume .timeline-header p {
 	font-family: "Poppins", sans-serif;
@@ -2525,8 +2526,8 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 .s-works {
-  padding-top: 19.2rem;
-  padding-bottom: 16rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   background-color: #ffffff;
 }
 
@@ -2827,8 +2828,8 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
  .s-footer {
-  padding-top: 24rem;
-  padding-bottom: 8rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   background-color: #0b0a15;
   position: relative;
 }
@@ -2869,7 +2870,6 @@ input::-moz-focus-inner {
   font-weight: 200;
   font-size: 2.8rem;
   line-height: 1.2;
-  
   margin-left: 500;
   
 }
