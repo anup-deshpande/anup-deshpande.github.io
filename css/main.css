@@ -2597,7 +2597,7 @@ input::-moz-focus-inner {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 80%;
-  background-image: url(../images/icons/icon-plus.svg);
+  background-image: url(../images/icons/icon-info.svg);
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translate3d(-50%, -50%, 0);
