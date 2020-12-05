@@ -3020,9 +3020,6 @@ input::-moz-focus-inner {
 }
 
 @media screen and (max-width:900px) {
-  .s-footer .footer-contacts {
-    margin-left: 0;
-  }
 
   .s-footer__main .column {
     -ms-flex: 0 0 100%;
