@@ -1764,18 +1764,18 @@ input::-moz-focus-inner {
  * responsive:
  * intro
  * ------------------------------------------------------------------- */
-@media screen and (max-width:1400px) {
+/* @media screen and (max-width:1400px) {
   .intro-text h3 {
     font-size: 2.2rem;
   }
 
   .intro-text h2 {
-    font-size: 7.2rem;
+    font-size: 4rem;
   }
 
-}
+} */
 
-@media screen and (max-width:1200px) {
+/* @media screen and (max-width:1200px) {
   .intro-content {
     max-width: 1000px;
   }
@@ -1788,9 +1788,9 @@ input::-moz-focus-inner {
     font-size: 5.6rem;
   }
 
-}
+} */
 
-@media screen and (max-width:1024px) {
+/* @media screen and (max-width:1024px) {
   .s-intro {
     max-height: 800px;
   }
@@ -1799,7 +1799,7 @@ input::-moz-focus-inner {
     font-size: 5.6rem;
   }
 
-}
+} */
 
 @media screen and (max-width:900px) {
   .intro-text h2 {
